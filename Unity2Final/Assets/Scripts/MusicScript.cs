@@ -12,6 +12,12 @@ public class MusicScript : MonoBehaviour
     public float fadeRate = 0.1f;
     float targetVol = 1;
     public float loopStart = 0, loopEnd = 0;
+    public float songStart = 0;
+
+    private void Start()
+    {
+        GetComponent<AudioSource>().time = songStart;
+    }
 
     //Public Methods
 
@@ -24,7 +30,7 @@ public class MusicScript : MonoBehaviour
                 AudioSource _audio = gameObject.GetComponent<AudioSource>();
                 if (!_audio.loop)
                     _audio.PlayOneShot(_audio.clip);
-                _audio.time = 0;
+                _audio.time = songStart;
                 break;
             }
         }
