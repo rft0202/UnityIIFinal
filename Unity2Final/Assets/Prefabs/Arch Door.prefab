@@ -36,7 +36,7 @@ Transform:
   - {fileID: 3913791787461792912}
   - {fileID: 379172080759544483}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1650332029471198117
 MonoBehaviour:
@@ -1215,6 +1215,7 @@ GameObject:
   - component: {fileID: 7303877188048518164}
   - component: {fileID: 8283696173806019420}
   - component: {fileID: 6417817574406885331}
+  - component: {fileID: 3606318291522805625}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -1685,6 +1686,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3606318291522805625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980492469285410521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036d18e15d512a846952f9295a0b2ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantsToGrow: 0
+  door: {fileID: 6417817574406885331}
 --- !u!1 &6684699868418330985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1715,7 @@ GameObject:
   - component: {fileID: 2634311045125199401}
   - component: {fileID: 1017529553492992432}
   - component: {fileID: 6454527232601273381}
+  - component: {fileID: 7967892224727197515}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -2170,3 +2186,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7967892224727197515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684699868418330985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036d18e15d512a846952f9295a0b2ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantsToGrow: 0
+  door: {fileID: 6454527232601273381}

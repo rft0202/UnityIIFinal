@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupObj : MonoBehaviour
 {
-    bool pickedUp=false;
+    public bool pickedUp=false;
     Rigidbody rb;
     Transform DestinationObj;
 
