@@ -7743,7 +7743,7 @@ GameObject:
   - component: {fileID: 1397675305}
   - component: {fileID: 1397675304}
   m_Layer: 0
-  m_Name: Tutorial
+  m_Name: Puzzle
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

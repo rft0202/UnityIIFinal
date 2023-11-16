@@ -11,4 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: fb2efb09d02a5054a8421e3170ccd084
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 93f692ab12613ee4bad5791d9543a526
+  - enabled: 1
+    path: Assets/Scenes/Puzzle.unity
+    guid: d8b4cd8fc0b68764c9ba5ba9bf3c145a
+  - enabled: 1
+    path: Assets/Scenes/AdversaryRoom.unity
+    guid: db94ddbf3ce75e148a30b1af2a80922f
+  - enabled: 1
+    path: Assets/Scenes/PlatformingRoom.unity
+    guid: e16c13d03c803554b926c636b60a2148
+  - enabled: 1
+    path: Assets/Scenes/EscapeRoom.unity
+    guid: 7e580d8b9696aa24b93bd74fd79e6612
   m_configObjects: {}

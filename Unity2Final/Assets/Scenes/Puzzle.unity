@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 33641135}
   - component: {fileID: 33641134}
   m_Layer: 0
-  m_Name: Puzzle
+  m_Name: AdversaryRoom
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
