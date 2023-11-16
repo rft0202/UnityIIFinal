@@ -31,6 +31,7 @@ public class PatrolEnemy : MonoBehaviour
         patrolling = true;
         lastPos = transform.position;
         target = GameObject.Find("Player").transform;
+        StartCoroutine(Attack());
     }
 
     bool CanSeePlayer()
@@ -119,5 +120,20 @@ public class PatrolEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         alerted = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<PickupObj>() != null) //Hit by pickup obj
+        {
+            GetComponent<EnemyHealth>().TakeDamage(50);
+        }
+    }
+
+    public IEnumerator Attack()
+    {
+        GetComponent<EnemyAttack>().Attack();
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(Attack());
     }
 }

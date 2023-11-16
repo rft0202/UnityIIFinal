@@ -46,6 +46,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    bool allEnemiesDefeated()
+    {
+        return (enemiesKilled >= enemiesInLevel);
+    }
+
     IEnumerator nextLvl(string _lvl)
     {
         yield return new WaitForSeconds(1f);
