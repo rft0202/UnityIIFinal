@@ -22,6 +22,7 @@ public class CatCollector : MonoBehaviour
                 ps.numCats++;
             }
             other.enabled = false;
+            other.gameObject.GetComponent<CatFollow>().enabled = true;
         }
     }
 }
