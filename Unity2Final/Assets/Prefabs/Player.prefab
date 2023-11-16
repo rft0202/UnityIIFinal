@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8407743239112470094}
   - component: {fileID: 4576998212507672411}
   - component: {fileID: 3468670639367489869}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   gravMult: 4
   jumpPow: -15
   coyoteTime: 0.2
-  climbSpd: 0.25
+  climbSpd: 6
 --- !u!114 &8407743239112470094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 5811197094401268467}
   - component: {fileID: 6558708502711465025}
   - component: {fileID: 4880365194155435468}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dist: 5
-  pickupCooldown: 1
+  pickupCooldown: 0.1
   clickIcon: {fileID: 0}
 --- !u!114 &4880365194155435468
 MonoBehaviour:
@@ -565,7 +565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7976242799408286764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: objTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
