@@ -15,7 +15,8 @@ public class FPMovement : MonoBehaviour
     float h, v;
     float vy;
     float coyoteTimer = 0;
-    bool isCollector = true,onLadder=false;
+    bool isCollector = true,onLadder=false, onRope=false;
+    Transform ropeTransform;
 
     CharacterController controller;
 
@@ -48,7 +49,11 @@ public class FPMovement : MonoBehaviour
         movement = Vector3.ClampMagnitude(movement,spd);
 
         coyoteTimer += Time.deltaTime;
-        if (onLadder && (v != 0 || h != 0))
+        if (onRope)
+        {
+            movement = Vector3.zero;
+        }
+        else if (onLadder && (v != 0 || h != 0))
         {
             vy = -1;
             movement.y = climbSpd;
@@ -89,7 +94,8 @@ public class FPMovement : MonoBehaviour
     {
         if (ctx.performed)
         {
-            if (isGrounded() || (coyoteTimer<=coyoteTime)) {
+            
+            if (isGrounded() || (coyoteTimer<=coyoteTime) || onRope) {
                 coyoteTimer = coyoteTime+1;
                 vy = -1;
                 vy *= jumpPow;
@@ -99,6 +105,7 @@ public class FPMovement : MonoBehaviour
                         //collector.DoNextTutorial("Collect all of the " + collector.itemName + "!");
                 }
             }
+            if (onRope) onRope = false;
         }
         else if(!ctx.performed&&vy>0)
         {
@@ -119,6 +126,9 @@ public class FPMovement : MonoBehaviour
         }else if (other.CompareTag("Ladder"))
         {
             onLadder = true;
+        }else if (other.CompareTag("Rope"))
+        {
+            onRope = true;
         }
     }
 
