@@ -338,9 +338,11 @@ MonoBehaviour:
   playsOnScenes:
   - MainMenu
   - Tutorial
+  - Puzzle
+  - AdversaryRoom
+  - PlatformingRoom
   startOnScenes:
   - MainMenu
-  - Tutorial
   maxVol: 0.5
   fadeRate: 0.1
   loopStart: 10

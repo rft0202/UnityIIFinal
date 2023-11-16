@@ -101,3 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: {fileID: 8646746973411740366}
+  growCounter1: {fileID: 0}
+  growCounter2: {fileID: 0}
