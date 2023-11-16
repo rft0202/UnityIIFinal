@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ladder
   - Enemy
+  - WaterPlant
+  - WaterParticle
   layers:
   - Default
   - TransparentFX
