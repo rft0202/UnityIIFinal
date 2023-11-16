@@ -9,6 +9,7 @@ TagManager:
   - WaterPlant
   - WaterParticle
   - Rope
+  - Cat
   layers:
   - Default
   - TransparentFX
