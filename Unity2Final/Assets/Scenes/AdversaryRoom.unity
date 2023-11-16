@@ -10560,7 +10560,7 @@ GameObject:
   - component: {fileID: 788900968}
   - component: {fileID: 788900967}
   m_Layer: 0
-  m_Name: AdversaryRoom
+  m_Name: PlatformingRoom
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
