@@ -16,7 +16,7 @@ public class FPMovement : MonoBehaviour
     float vy;
     float coyoteTimer = 0;
     bool isCollector = true,onLadder=false, onRope=false;
-    Transform ropeTransform;
+    Collider prevRope;
 
     CharacterController controller;
 
@@ -52,6 +52,7 @@ public class FPMovement : MonoBehaviour
         if (onRope)
         {
             movement = Vector3.zero;
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         }
         else if (onLadder && (v != 0 || h != 0))
         {
@@ -105,7 +106,12 @@ public class FPMovement : MonoBehaviour
                         //collector.DoNextTutorial("Collect all of the " + collector.itemName + "!");
                 }
             }
-            if (onRope) onRope = false;
+            if (onRope)
+            {
+                onRope = false;
+                transform.SetParent(null);
+                StartCoroutine(RopeCooldown());
+            }
         }
         else if(!ctx.performed&&vy>0)
         {
@@ -129,6 +135,11 @@ public class FPMovement : MonoBehaviour
         }else if (other.CompareTag("Rope"))
         {
             onRope = true;
+            prevRope = other;
+            controller.enabled = false;
+            transform.position = other.transform.GetChild(0).position;
+            controller.enabled = true;
+            transform.SetParent(other.transform.GetChild(0));
         }
     }
 
@@ -144,5 +155,12 @@ public class FPMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(_time);
         SceneManager.LoadScene(_scene);
+    }
+
+    IEnumerator RopeCooldown()
+    {
+        prevRope.enabled = false;
+        yield return new WaitForSeconds(1f);
+        prevRope.enabled = true;
     }
 }
