@@ -7,7 +7,9 @@ public class CatPlatform : MonoBehaviour
     public Transform startPos, endPos;
     public float spd = 1.0f;
     public int numCats=0, requiredCats=0;
-    float distMoved=4.6f;
+    public bool resets=false;
+    float distMoved=4.71f;
+
     Vector3 _startPos, _endPos;
     bool playerOn=false;
 
@@ -16,6 +18,7 @@ public class CatPlatform : MonoBehaviour
     {
         _startPos = (startPos == null) ? (transform.position) : (startPos.position);
         _endPos = endPos.position;
+        spd *= 0.02f;
     }
 
     // Update is called once per frame
@@ -23,9 +26,18 @@ public class CatPlatform : MonoBehaviour
     {
         if (numCats >= requiredCats && playerOn)
         {
-            distMoved+=spd*Time.deltaTime;
-            if (distMoved >= 360) distMoved -= 360;
-            transform.position = Vector3.Lerp(_startPos, _endPos, (Mathf.Sin(distMoved)+1)/2);
+            distMoved+=spd;
+            if (distMoved >= 6.283) distMoved -= 6.283f; //Why these weird decimals??? Well it seems the Sin function
+            transform.position = Vector3.Lerp(_startPos, _endPos, (Mathf.Sin(distMoved)+1)/2); //uses radians :(
+        }else if (resets)
+        {
+            if (distMoved > 4.71f + spd || distMoved < 4.71f - spd) //4.71 = 3/2 pi
+            {
+                distMoved += spd;
+                if (distMoved >= 6.283) distMoved -= 6.283f; // 6.283 = 2pi
+                transform.position = Vector3.Lerp(_startPos, _endPos, (Mathf.Sin(distMoved) + 1) / 2);
+            }
+
         }
     }
 

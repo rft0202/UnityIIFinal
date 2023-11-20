@@ -824,6 +824,7 @@ MonoBehaviour:
   spd: 1
   numCats: 0
   requiredCats: 1
+  resets: 1
 --- !u!65 &175392860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1134,7 +1135,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh116510
+  m_Name: pb_Mesh31220
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2381,6 +2382,7 @@ MonoBehaviour:
   spd: 1
   numCats: 0
   requiredCats: 3
+  resets: 0
 --- !u!23 &601415755
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3834,6 +3836,7 @@ MonoBehaviour:
   spd: 1
   numCats: 0
   requiredCats: 4
+  resets: 0
 --- !u!23 &904515351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4495,7 +4498,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh116664
+  m_Name: pb_Mesh31392
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5096,6 +5099,7 @@ MonoBehaviour:
   spd: 1
   numCats: 0
   requiredCats: 2
+  resets: 0
 --- !u!23 &943571591
 MeshRenderer:
   m_ObjectHideFlags: 0
