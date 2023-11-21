@@ -27,6 +27,27 @@ public class CatFollow : MonoBehaviour
         if (plat != null)
         {
             transform.position = new Vector3(transform.position.x, plat.transform.position.y, transform.position.z);
+            if (!plat.GetComponent<CatPlatform>().playerOn)
+            {
+                bool playerPassedPlat = (Vector3.Distance(player.position,plat.transform.GetChild(2).position) < Vector3.Distance(player.position,plat.transform.GetChild(1).position));
+
+                Vector3 targetPos;
+                CatPlatform platScript = plat.GetComponent<CatPlatform>();
+                if (playerPassedPlat)
+                {
+                    targetPos = platScript.exitLink.startPoint;
+                }
+                else
+                {
+                    targetPos = platScript.enterLink.startPoint;
+                }
+
+                agent.SetDestination(targetPos);
+            }
+            else
+            {
+                agent.SetDestination(transform.position);
+            }
         }
     }
 

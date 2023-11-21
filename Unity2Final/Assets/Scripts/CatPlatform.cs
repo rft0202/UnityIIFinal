@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Unity.AI.Navigation;
 
 public class CatPlatform : MonoBehaviour
 {
@@ -12,7 +14,10 @@ public class CatPlatform : MonoBehaviour
     float distMoved=4.71f;
 
     Vector3 _startPos, _endPos;
-    bool playerOn=false;
+    [NonSerialized]
+    public bool playerOn=false;
+
+    public NavMeshLink enterLink, exitLink;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +25,7 @@ public class CatPlatform : MonoBehaviour
         _startPos = (startPos == null) ? (transform.position) : (startPos.position);
         _endPos = endPos.position;
         spd *= 0.02f;
+        requiredCats *= 2;
     }
 
     // Update is called once per frame

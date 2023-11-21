@@ -21,7 +21,7 @@ public class CatCollector : MonoBehaviour
                 CatPlatform ps = p.GetComponent<CatPlatform>();
                 ps.numCats++;
             }*/
-            //other.enabled = false;
+            other.enabled = true;
             other.gameObject.GetComponent<CatFollow>().enabled = true;
         }
     }
