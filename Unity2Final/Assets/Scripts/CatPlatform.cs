@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CatPlatform : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class CatPlatform : MonoBehaviour
         {
             other.transform.SetParent(transform);
             playerOn = true;
+        }else if (other.gameObject.CompareTag("Cat"))
+        {
+            other.transform.SetParent(transform);
+            other.gameObject.GetComponent<CatFollow>().onPlatform(gameObject);
+            numCats++;
         }
     }
 
@@ -56,6 +62,11 @@ public class CatPlatform : MonoBehaviour
         {
             other.transform.SetParent(null);
             playerOn = false;
+        }else if (other.gameObject.CompareTag("Cat"))
+        {
+            other.transform.SetParent(null);
+            other.gameObject.GetComponent<CatFollow>().offPlatform();
+            numCats--;
         }
     }
 }
