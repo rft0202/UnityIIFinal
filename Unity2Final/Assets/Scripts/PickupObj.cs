@@ -21,7 +21,7 @@ public class PickupObj : MonoBehaviour
         if (pickedUp)
         {
             transform.position = Vector3.MoveTowards(transform.position, DestinationObj.position, Vector3.Magnitude(transform.position - DestinationObj.position) / 4);
-            
+            transform.rotation = Quaternion.Lerp(transform.rotation, DestinationObj.rotation, 0.2f); ;
         }
     }
 
