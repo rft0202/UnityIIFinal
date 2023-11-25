@@ -17711,6 +17711,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watering Can
       objectReference: {fileID: 0}
+    - target: {fileID: 3725038531922658658, guid: 41bc465ae5c0102438bfa73c053bdd78,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3725038531922658658, guid: 41bc465ae5c0102438bfa73c053bdd78,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 97c33fe6fe245854bbb05265c97b1e3f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

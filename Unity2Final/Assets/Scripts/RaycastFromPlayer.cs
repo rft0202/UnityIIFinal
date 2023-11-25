@@ -30,7 +30,7 @@ public class RaycastFromPlayer : MonoBehaviour
 
         try{prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 0.5f);}
         catch(System.Exception e) { if (e.Message == "") Debug.Log(e); }
-        //clickIcon.SetActive(showClickIcon());
+        clickIcon.SetActive(showClickIcon());
     }
 
     public void PickupObj(InputAction.CallbackContext ctx)
@@ -90,7 +90,7 @@ public class RaycastFromPlayer : MonoBehaviour
             if (returnBool)
             {
                 prevHit = hit.collider.gameObject;
-                //prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 1.05f);
+                prevHit.GetComponent<PickupObj>().showGlow();
             }
         }
         return returnBool;
