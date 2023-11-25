@@ -289,7 +289,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6363894097811136615}
   - component: {fileID: 4567464098805690059}
-  - component: {fileID: 6188189065155215467}
+  - component: {fileID: 3733478049371402581}
+  - component: {fileID: 147475982724002586}
+  - component: {fileID: 3998498334975918127}
   m_Layer: 0
   m_Name: WaterHit
   m_TagString: WaterParticle
@@ -320,8 +322,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2584036307883369726}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &6188189065155215467
-SphereCollider:
+--- !u!65 &3733478049371402581
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -339,8 +341,50 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.25
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.30000004, y: 0.12837212, z: 0.64668804}
+  m_Center: {x: 0.000000005116657, y: 0.011078147, z: 0.17665814}
+--- !u!65 &147475982724002586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584036307883369726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.32, y: 0.20800297, z: 0.2313031}
+  m_Center: {x: 0.00000001788713, y: -0.11298836, z: 0.54948586}
+--- !u!65 &3998498334975918127
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584036307883369726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3400001, y: 0.28985158, z: 0.36267993}
+  m_Center: {x: 0.00000002794301, y: -0.34806252, z: 0.7814092}
 --- !u!1 &3677580970407874535
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6365589626364092947
 Transform:
   m_ObjectHideFlags: 0
