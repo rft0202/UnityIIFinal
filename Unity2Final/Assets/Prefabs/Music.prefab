@@ -141,13 +141,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a7e5c632f230e4a9bc941d7568450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playsOnScenes: []
-  startOnScenes: []
+  playsOnScenes:
+  - EscapeRoom
+  startOnScenes:
+  - EscapeRoom
   maxVol: 0.5
   fadeRate: 0.1
   loopStart: 4
   loopEnd: 51
-  songStart: 2
+  songStart: 0
 --- !u!1 &2756418398834721217
 GameObject:
   m_ObjectHideFlags: 0

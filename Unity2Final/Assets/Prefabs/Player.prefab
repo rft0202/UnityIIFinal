@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5984181118837714962}
   - component: {fileID: 6904240522808646483}
   - component: {fileID: 8407743239112470094}
+  - component: {fileID: 2426334770822465014}
   - component: {fileID: 4576998212507672411}
   - component: {fileID: 3468670639367489869}
   m_Layer: 3
@@ -123,6 +124,21 @@ MonoBehaviour:
   sentitivityY: 0
   minVertical: -60
   maxVertical: 60
+--- !u!114 &2426334770822465014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240342144902218961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005297e3ec235b34eb554b7bb57a0505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Doors: []
+  Platforms: []
+  normalCat: 1
 --- !u!114 &4576998212507672411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,6 +567,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 21300c80-ae2f-42c4-9714-d234cdc1625d
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6558708502711465025}
+        m_TargetAssemblyTypeName: RaycastFromPlayer, Assembly-CSharp
+        m_MethodName: ThrowObj
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b9009247-747f-4085-81d2-47f79712f8e5
+    m_ActionName: Player/Throw[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

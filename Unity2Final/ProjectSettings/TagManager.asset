@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - WaterPlant
   - WaterParticle
+  - Rope
+  - Cat
   layers:
   - Default
   - TransparentFX

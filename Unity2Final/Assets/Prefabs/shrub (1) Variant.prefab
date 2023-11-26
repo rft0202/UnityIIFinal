@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 409024204744052258, guid: 6bbaea1be78b8d02d852cd83ce21cd94,
         type: 3}
@@ -73,6 +73,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: WaterPlant
       objectReference: {fileID: 0}
+    - target: {fileID: 1996149129273314825, guid: 6bbaea1be78b8d02d852cd83ce21cd94,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996149129273314825, guid: 6bbaea1be78b8d02d852cd83ce21cd94,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996149129273314825, guid: 6bbaea1be78b8d02d852cd83ce21cd94,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -100,6 +115,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da96ad4f8b394ce4d91dd03b9fe325f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 8646746973411740366}
   growCounter1: {fileID: 0}
   growCounter2: {fileID: 0}

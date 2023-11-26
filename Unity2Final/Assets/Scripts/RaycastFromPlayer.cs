@@ -28,8 +28,9 @@ public class RaycastFromPlayer : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward*dist, Color.green);
 
-        try{prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 0.5f);} catch(System.Exception e) {}
-        //clickIcon.SetActive(showClickIcon());
+        try{prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 0.5f);}
+        catch(System.Exception e) { if (e.Message == "") Debug.Log(e); }
+        clickIcon.SetActive(showClickIcon());
     }
 
     public void PickupObj(InputAction.CallbackContext ctx)
@@ -62,6 +63,17 @@ public class RaycastFromPlayer : MonoBehaviour
 
     }
 
+    public void ThrowObj(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && holdingObj)
+        {
+            heldObj.GetComponent<PickupObj>().throwObj();
+            StartCoroutine(doPickupCooldown());
+            holdingObj = false;
+            heldObj = null;
+        }
+    }
+
     IEnumerator doPickupCooldown()
     {
         canPickUp = false;
@@ -89,7 +101,7 @@ public class RaycastFromPlayer : MonoBehaviour
             if (returnBool)
             {
                 prevHit = hit.collider.gameObject;
-                //prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 1.05f);
+                prevHit.GetComponent<PickupObj>().showGlow();
             }
         }
         return returnBool;
