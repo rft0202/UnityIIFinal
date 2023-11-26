@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Doors: []
   Platforms: []
+  normalCat: 1
 --- !u!114 &4576998212507672411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +567,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 21300c80-ae2f-42c4-9714-d234cdc1625d
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6558708502711465025}
+        m_TargetAssemblyTypeName: RaycastFromPlayer, Assembly-CSharp
+        m_MethodName: ThrowObj
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b9009247-747f-4085-81d2-47f79712f8e5
+    m_ActionName: Player/Throw[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

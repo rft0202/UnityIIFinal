@@ -6786,6 +6786,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Music
       objectReference: {fileID: 0}
+    - target: {fileID: 5258494195492993750, guid: abae18a013b36b0439cc9f60e321786c,
+        type: 3}
+      propertyPath: playsOnScenes.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258494195492993750, guid: abae18a013b36b0439cc9f60e321786c,
+        type: 3}
+      propertyPath: playsOnScenes.Array.data[5]
+      value: PlatformingRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 6366102250009351189, guid: abae18a013b36b0439cc9f60e321786c,
         type: 3}
       propertyPath: m_RootOrder

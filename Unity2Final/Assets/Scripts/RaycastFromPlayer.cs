@@ -63,6 +63,17 @@ public class RaycastFromPlayer : MonoBehaviour
 
     }
 
+    public void ThrowObj(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && holdingObj)
+        {
+            heldObj.GetComponent<PickupObj>().throwObj();
+            StartCoroutine(doPickupCooldown());
+            holdingObj = false;
+            heldObj = null;
+        }
+    }
+
     IEnumerator doPickupCooldown()
     {
         canPickUp = false;

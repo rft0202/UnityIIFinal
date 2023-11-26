@@ -56,6 +56,17 @@ public class PickupObj : MonoBehaviour
                 //transform.parent = null;
             }
         }
+    }
 
+    public void throwObj()
+    {
+        pickedUp = false;
+        if(rb != null)
+        {
+            rb.useGravity = true;
+            rb.isKinematic = false;
+            rb.velocity = transform.forward * 15;
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, 30);
+        }
     }
 }
