@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currHp = maxHp;
+        hpBar.transform.parent.gameObject.SetActive(false);
     }
 
     public void TakeDamage(float _dmg)
@@ -35,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
             GetComponent<MouseLook>().enabled = false;
             transform.GetChild(0).GetComponent<MouseLook>().enabled = false;
         }
+        hpBar.transform.parent.gameObject.SetActive((currHp < maxHp));
     }
 
     public void enemyKilled()

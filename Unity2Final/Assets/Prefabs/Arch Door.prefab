@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6371065271180910647}
   - component: {fileID: 3390522420472355050}
   - component: {fileID: 6879226481943284311}
+  - component: {fileID: 2568551107261514289}
+  - component: {fileID: 7918800119865720910}
   m_Layer: 0
   m_Name: Arch Door
   m_TagString: Untagged
@@ -1200,6 +1202,48 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &2568551107261514289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591564475785305178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1116447, y: 4.14052, z: 2.9705524}
+  m_Center: {x: 4.044177, y: 0.627655, z: 0}
+--- !u!65 &7918800119865720910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2591564475785305178}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.111645, y: 4.14052, z: 2.9705524}
+  m_Center: {x: -4.044177, y: 0.627655, z: 0}
 --- !u!1 &2980492469285410521
 GameObject:
   m_ObjectHideFlags: 0
