@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.AI.Navigation;
 
 public class RaycastFromPlayer : MonoBehaviour
 {
     public float dist = 5;
-    bool canPickUp = true, holdingObj = false;
+    bool canPickUp = true, holdingObj = false, hasSurface=false;
     public float pickupCooldown = 1;
 
     Collider heldObj;
@@ -31,12 +32,14 @@ public class RaycastFromPlayer : MonoBehaviour
         try{prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 0.5f);}
         catch(System.Exception e) { if (e.Message == "") Debug.Log(e); }
         clickIcon.SetActive(showClickIcon());
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void PickupObj(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             interactObj();
 
             RaycastHit hit;
@@ -67,6 +70,7 @@ public class RaycastFromPlayer : MonoBehaviour
     {
         if (ctx.performed && holdingObj)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             heldObj.GetComponent<PickupObj>().throwObj();
             StartCoroutine(doPickupCooldown());
             holdingObj = false;
