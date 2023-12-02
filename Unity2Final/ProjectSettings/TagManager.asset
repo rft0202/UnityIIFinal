@@ -10,6 +10,7 @@ TagManager:
   - WaterParticle
   - Rope
   - Cat
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

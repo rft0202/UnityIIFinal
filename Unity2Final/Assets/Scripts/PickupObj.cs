@@ -10,12 +10,16 @@ public class PickupObj : MonoBehaviour
     Transform DestinationObj;
     public Renderer glowRender;
     public float glowSize = 1.05f;
+    Vector3 startPos;
+    Quaternion startRotation;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         DestinationObj = GameObject.Find("objTransform").transform;
+        startPos = transform.position;
+        startRotation = transform.rotation;
         if(glowRender==null)
             glowRender = GetComponent<Renderer>();
     }
@@ -25,8 +29,11 @@ public class PickupObj : MonoBehaviour
     {
         if (pickedUp)
         {
-            transform.position = Vector3.MoveTowards(transform.position, DestinationObj.position, Vector3.Magnitude(transform.position - DestinationObj.position) / 4);
-            transform.rotation = Quaternion.Lerp(transform.rotation, DestinationObj.rotation, 0.2f);
+            transform.SetPositionAndRotation(Vector3.MoveTowards(transform.position, DestinationObj.position, Vector3.Magnitude(transform.position - DestinationObj.position) / 4), Quaternion.Lerp(transform.rotation, DestinationObj.rotation, 0.2f));
+        }
+        else
+        {
+            if(transform.position.y<-5) resetPos();
         }
     }
 
@@ -69,5 +76,15 @@ public class PickupObj : MonoBehaviour
             rb.velocity = transform.forward * 15;
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, 30);
         }
+    }
+
+    public void resetPos()
+    {
+        transform.SetPositionAndRotation(startPos, startRotation);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!pickedUp && collision.gameObject.CompareTag("OutOfBounds")) resetPos();
     }
 }

@@ -30,8 +30,13 @@ public class PatrolEnemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         patrolling = true;
         lastPos = transform.position;
-        target = GameObject.Find("Player").transform;
+        //target = GameObject.Find("Player").transform;
         StartCoroutine(Attack());
+    }
+
+    private void Awake()
+    {
+        target = GameObject.Find("Player").transform;
     }
 
     bool CanSeePlayer()
