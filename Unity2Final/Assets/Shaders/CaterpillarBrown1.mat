@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GrassShader
-  m_Shader: {fileID: -6465566751694194690, guid: 82b8077bf49ede44da89283f07a2b404,
+  m_Name: CaterpillarBrown1
+  m_Shader: {fileID: -6465566751694194690, guid: 9c514f29ea6f53349af50e5fe860dc20,
     type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 82b8077bf49ede44da89283f07a2b404,
+  m_Parent: {fileID: -876546973899608171, guid: 9c514f29ea6f53349af50e5fe860dc20,
     type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -29,7 +29,8 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _height: 0.5
-    m_Colors: []
+    m_Colors:
+    - _Color: {r: 0.21568628, g: 0.18431373, b: 0.14509805, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7465924709856139542
 MonoBehaviour:
