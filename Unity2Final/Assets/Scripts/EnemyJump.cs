@@ -29,7 +29,6 @@ public class EnemyJump : MonoBehaviour
         OffMeshLinkData data = agent.currentOffMeshLinkData;
         Vector3 startPos = agent.transform.position;
         Vector3 endpos = data.endPos;
-        Debug.Log(endpos);
         if (endpos == Vector3.zero) { //Uh oh something wrong!
             Vector3 player = GameObject.Find("Player").transform.position;
             endpos = new Vector3(player.x,player.y-1,player.z);
