@@ -7,7 +7,7 @@ using Unity.AI.Navigation;
 public class RaycastFromPlayer : MonoBehaviour
 {
     public float dist = 5;
-    bool canPickUp = true, holdingObj = false, hasSurface=false;
+    bool canPickUp = true, holdingObj = false;
     public float pickupCooldown = 1;
 
     Collider heldObj;

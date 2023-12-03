@@ -31,10 +31,12 @@ public class EnemyHealth : MonoBehaviour
             //Enemy died
             Dead();
         }
-
-        if(unalert!=null) StopCoroutine(unalert);
-        GetComponent<PatrolEnemy>().alerted = true;
-        unalert = StartCoroutine(GetComponent<PatrolEnemy>().Unalert());
+        else
+        {
+            if (unalert != null) StopCoroutine(unalert);
+            GetComponent<PatrolEnemy>().alerted = true;
+            unalert = StartCoroutine(GetComponent<PatrolEnemy>().Unalert());
+        }
     }
 
     void Dead()

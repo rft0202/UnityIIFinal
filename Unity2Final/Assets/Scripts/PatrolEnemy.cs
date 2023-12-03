@@ -9,7 +9,7 @@ public class PatrolEnemy : MonoBehaviour
 
     public Transform[] waypoints;
 
-    bool arrived=false, patrolling;
+    bool arrived=false, patrolling, invincible=false;
     int destination;
 
     public bool alerted;
@@ -129,9 +129,14 @@ public class PatrolEnemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<PickupObj>() != null) //Hit by pickup obj
+        GameObject hitObj = collision.gameObject;
+        if (hitObj.GetComponent<PickupObj>() != null) //Hit by pickup obj
         {
-            GetComponent<EnemyHealth>().TakeDamage(50);
+            if (!invincible && hitObj.GetComponent<PickupObj>().canDamage)
+            {
+                GetComponent<EnemyHealth>().TakeDamage(50);
+                if(GetComponent<EnemyHealth>().currHp>0) StartCoroutine(damageCooldown());
+            }
         }
     }
 
@@ -140,5 +145,12 @@ public class PatrolEnemy : MonoBehaviour
         GetComponent<EnemyAttack>().Attack();
         yield return new WaitForSeconds(1.5f);
         StartCoroutine(Attack());
+    }
+
+    IEnumerator damageCooldown()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(0.5f);
+        invincible = false;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
@@ -12,6 +13,8 @@ public class PickupObj : MonoBehaviour
     public float glowSize = 1.05f;
     Vector3 startPos;
     Quaternion startRotation;
+    [NonSerialized]
+    public bool canDamage=false;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +78,7 @@ public class PickupObj : MonoBehaviour
             rb.isKinematic = false;
             rb.velocity = transform.forward * 15;
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, 30);
+            StartCoroutine(damageCooldown());
         }
     }
 
@@ -86,5 +90,12 @@ public class PickupObj : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!pickedUp && collision.gameObject.CompareTag("OutOfBounds")) resetPos();
+    }
+
+    IEnumerator damageCooldown()
+    {
+        canDamage = true;
+        yield return new WaitForSeconds(0.5f);
+        canDamage = false;
     }
 }
