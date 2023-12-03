@@ -7,7 +7,6 @@ public class EnemyJump : MonoBehaviour
 {
     public float jumpHeight=2f, jumpDuration=0.6f;
     public Animator anim;
-
     IEnumerator Start()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
@@ -16,7 +15,7 @@ public class EnemyJump : MonoBehaviour
         {
             if (agent.isOnOffMeshLink)
             {
-                //anim.SetTrigger("Jump");
+                anim.SetTrigger("Jump");
                 yield return StartCoroutine(Jump(agent,jumpHeight,jumpDuration));
                 agent.CompleteOffMeshLink();
             }

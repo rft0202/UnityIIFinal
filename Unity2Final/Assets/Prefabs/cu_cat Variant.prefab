@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b4c5b4d402d3c3c408f05880f0d7b6a5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -92,6 +96,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 929799973857975310}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6944840563309793749}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7,
         type: 3}
       insertIndex: -1
@@ -154,7 +162,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 2
   jumpDuration: 0.6
-  anim: {fileID: 0}
+  anim: {fileID: 1127575995697721116}
+--- !u!114 &6944840563309793749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127575995688197340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131379f1b234ae641b9d4fa3af80a6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!195 &7118679741534441805
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -204,3 +224,9 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &1127575995697721116 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1127575995688229500}
+  m_PrefabAsset: {fileID: 0}

@@ -33685,6 +33685,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b4c5b4d402d3c3c408f05880f0d7b6a5, type: 2}
     - target: {fileID: 13700000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -33721,6 +33725,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 782054656}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 782054663}
   m_SourcePrefab: {fileID: 100100000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7, type: 3}
 --- !u!1 &782054653 stripped
 GameObject:
@@ -33819,7 +33827,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 3
   jumpDuration: 0.5
-  anim: {fileID: 0}
+  anim: {fileID: 782054661}
+--- !u!95 &782054661 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 0ce46e8dd6b588a4b8bed6f2d6eac9d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 782054652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &782054663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782054653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131379f1b234ae641b9d4fa3af80a6fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &783459251
 Mesh:
   m_ObjectHideFlags: 0
