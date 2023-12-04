@@ -9,7 +9,7 @@ public class PatrolEnemy : MonoBehaviour
 
     public Transform[] waypoints;
 
-    bool arrived=false, patrolling, invincible=false;
+    bool arrived=false, patrolling, invincible=false, attacking=false;
     int destination;
 
     public bool alerted;
@@ -30,6 +30,7 @@ public class PatrolEnemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         patrolling = true;
         lastPos = transform.position;
+        anim = GetComponent<Animator>();
         //target = GameObject.Find("Player").transform;
         StartCoroutine(Attack());
     }
@@ -67,7 +68,6 @@ public class PatrolEnemy : MonoBehaviour
         //Code for patrolling
         if (patrolling)
         {
-            //anim.SetBool("Attack", false);
             if (agent.remainingDistance < agent.stoppingDistance) //Arrived
             {
                 if (!arrived)
@@ -83,7 +83,11 @@ public class PatrolEnemy : MonoBehaviour
             agent.SetDestination(target.position);
             patrolling = false;
             //setup attack
-            //anim.SetBool("Attack", (agent.remainingDistance < agent.stoppingDistance));
+            if (agent.remainingDistance < agent.stoppingDistance && !attacking)
+            {
+                attacking = true;
+                StartCoroutine(Attack());
+            }
         }
         else
         {
@@ -98,7 +102,7 @@ public class PatrolEnemy : MonoBehaviour
             }
         }
         //Play Move Animation
-        //anim.SetFloat("Moving", agent.velocity.sqrMagnitude);
+        anim.SetFloat("Moving", agent.velocity.sqrMagnitude);
     }
 
     IEnumerator GoToNextWaypoint()
@@ -143,8 +147,9 @@ public class PatrolEnemy : MonoBehaviour
     public IEnumerator Attack()
     {
         GetComponent<EnemyAttack>().Attack();
+        anim.SetTrigger("Attack");
         yield return new WaitForSeconds(1.5f);
-        StartCoroutine(Attack());
+        attacking = false;
     }
 
     IEnumerator damageCooldown()
