@@ -146,9 +146,10 @@ public class PatrolEnemy : MonoBehaviour
 
     public IEnumerator Attack()
     {
+        yield return new WaitForSeconds(.5f);
         GetComponent<EnemyAttack>().Attack();
         anim.SetTrigger("Attack");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         attacking = false;
     }
 
