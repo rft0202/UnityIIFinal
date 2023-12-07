@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CatFollow : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class CatFollow : MonoBehaviour
     Transform player;
     NavMeshAgent agent;
     GameObject plat;
-    GameManager gm;
+    string currScene="";
+
     // Start is called before the first frame update
     void Start()
     {
         StartF();
+        currScene = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -23,10 +26,11 @@ public class CatFollow : MonoBehaviour
         /*Vector3 playerPos = new Vector3(player.position.x, player.position.y - 0.8f, player.position.z);
         transform.LookAt(playerPos);
         transform.position = Vector3.MoveTowards(transform.position, playerPos, (Vector3.Distance(transform.position,playerPos))*spd*Time.deltaTime);*/
-        if (gm.sceneChange)
+        if (currScene != SceneManager.GetActiveScene().name)
         {
+            currScene = SceneManager.GetActiveScene().name;
             StartF();
-            transform.position = player.position;
+            CatReset();
         }
         agent.SetDestination(player.position);
         if (plat != null)
@@ -66,10 +70,15 @@ public class CatFollow : MonoBehaviour
         plat = null;
     }
 
-    void StartF()
+    public void StartF()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+    public void CatReset()
+    {
+        agent.enabled = false;
+        transform.position = player.position;
+        agent.enabled = true;
     }
 }

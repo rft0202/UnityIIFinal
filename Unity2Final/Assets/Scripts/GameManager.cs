@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public int catsFollowing;
-    List<GameObject> cats;
     string currScene="";
     public bool sceneChange=false;
+    [NonSerialized]
+    public List<GameObject> cats;
 
     private void Awake()
     {
@@ -37,17 +39,22 @@ public class GameManager : MonoBehaviour
         {
             sceneChange = true;
             currScene = SceneManager.GetActiveScene().name;
-            for(int i=0; i<cats.Count; i++)
-            {
-                cats[i].transform.position = GameObject.Find("Player").transform.position;
-            }
         }
     }
 
-    public void AddCat(GameObject cat)
+    public void AddCat(GameObject cat) //uh dont think this is used (yet)
     {
-        cats.Add(cat);
-        DontDestroyOnLoad(cat);
         catsFollowing++;
+        cats.Add(cat);
+    }
+    public void PlayerDie()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        for(int i=0; i<cats.Count; i++)
+        {
+            CatFollow _cat = cats[i].GetComponent<CatFollow>();
+            _cat.StartF();
+            _cat.CatReset();
+        }
     }
 }

@@ -38,5 +38,6 @@ public class CatCollector : MonoBehaviour
             gc.plantsToGrow--;
         }
         DontDestroyOnLoad(cat);
+        //gameManager.cats.Add(cat);
     }
 }
