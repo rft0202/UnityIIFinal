@@ -7718,6 +7718,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127575995693404636, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 81df7c7ed8f59dc41ae3668a4112f228, type: 2}
     - target: {fileID: 1127575995697721116, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Avatar
@@ -8037,6 +8042,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127575995693404636, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a44fa24bbdbd644dac9e1a34073d98f, type: 2}
     - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: isSitting
@@ -9602,6 +9612,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127575995693404636, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a44fa24bbdbd644dac9e1a34073d98f, type: 2}
     - target: {fileID: 7118679741534441805, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Enabled
@@ -11914,6 +11929,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1127575995693404636, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 90340708074932045af38ab8c562013d, type: 2}
     - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: isSitting
