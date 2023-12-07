@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
     public int catsFollowing;
     string currScene="";
     public bool sceneChange=false;
-    [NonSerialized]
-    public List<GameObject> cats;
+    GameObject[] cats = new GameObject[30]; 
 
     private void Awake()
     {
@@ -44,13 +43,13 @@ public class GameManager : MonoBehaviour
 
     public void AddCat(GameObject cat) //uh dont think this is used (yet)
     {
+        cats[catsFollowing] = cat;
         catsFollowing++;
-        cats.Add(cat);
     }
     public void PlayerDie()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        for(int i=0; i<cats.Count; i++)
+        for(int i=0; i<catsFollowing; i++)
         {
             CatFollow _cat = cats[i].GetComponent<CatFollow>();
             _cat.StartF();

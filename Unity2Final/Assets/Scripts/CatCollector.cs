@@ -37,7 +37,8 @@ public class CatCollector : MonoBehaviour
             GrowCounter gc = d.GetComponent<GrowCounter>();
             gc.plantsToGrow--;
         }
+        Debug.Log(cat);
+        gameManager.AddCat(cat);
         DontDestroyOnLoad(cat);
-        //gameManager.cats.Add(cat);
     }
 }
