@@ -246,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c77c2b45b32214469d8ffb1aacb9ad3, type: 2}
+  - {fileID: 2100000, guid: b04e8438a0ad1514891305e92400b42d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -544,7 +544,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c77c2b45b32214469d8ffb1aacb9ad3, type: 2}
+  - {fileID: 2100000, guid: b04e8438a0ad1514891305e92400b42d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -842,7 +842,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c77c2b45b32214469d8ffb1aacb9ad3, type: 2}
+  - {fileID: 2100000, guid: b04e8438a0ad1514891305e92400b42d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -905,7 +905,7 @@ PrefabInstance:
     - target: {fileID: 492896821356490143, guid: 855083c8488a7df4e9ae04fb88857428,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 492896821356490143, guid: 855083c8488a7df4e9ae04fb88857428,
         type: 3}
@@ -965,7 +965,7 @@ PrefabInstance:
     - target: {fileID: 5538060800685596635, guid: 855083c8488a7df4e9ae04fb88857428,
         type: 3}
       propertyPath: m_Name
-      value: Planter Variant
+      value: Triple Planter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
