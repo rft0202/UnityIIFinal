@@ -95,7 +95,7 @@ public class PickupObj : MonoBehaviour
     IEnumerator damageCooldown()
     {
         canDamage = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         canDamage = false;
     }
 }

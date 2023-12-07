@@ -17,8 +17,8 @@ public class FPMovement : MonoBehaviour
     float coyoteTimer = 0;
     bool isCollector = true,onLadder=false, onRope=false;
     Collider prevRope;
-
     CharacterController controller;
+    GameManager gm;
 
     //ItemCollector collector;
 
@@ -36,12 +36,13 @@ public class FPMovement : MonoBehaviour
             isCollector = false;
             if (e.Message == "") Debug.Log("");
         }
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < -5) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //Reset if player fall oob
+        if (transform.position.y < -5) gm.PlayerDie(); //Reset if player fall oob
 
         float moveX=h*spd, moveZ=v*spd;
         Vector3 movement = new Vector3(moveX, 0, moveZ);

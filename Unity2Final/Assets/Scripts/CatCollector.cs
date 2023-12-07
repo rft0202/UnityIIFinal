@@ -19,11 +19,7 @@ public class CatCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Cat") && !other.gameObject.GetComponent<CatFollow>().enabled && normalCat)
         {
-            foreach (GameObject d in Doors)
-            {
-                GrowCounter gc = d.GetComponent<GrowCounter>();
-                gc.plantsToGrow--;
-            }
+            CollectCat(other.gameObject);
             /*foreach (GameObject p in Platforms)
             {
                 CatPlatform ps = p.GetComponent<CatPlatform>();
@@ -34,13 +30,14 @@ public class CatCollector : MonoBehaviour
         }
     }
 
-    public void CollectCat()
+    public void CollectCat(GameObject cat)
     {
         foreach (GameObject d in Doors)
         {
             GrowCounter gc = d.GetComponent<GrowCounter>();
             gc.plantsToGrow--;
         }
-        gameManager.catsFollowing++; //is this where cats are being collected?
+        DontDestroyOnLoad(cat);
+        //gameManager.cats.Add(cat);
     }
 }

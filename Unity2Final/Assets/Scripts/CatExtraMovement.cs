@@ -43,7 +43,7 @@ public class CatExtraMovement : MonoBehaviour
             }
             else
             {
-                other.gameObject.GetComponent<CatCollector>().CollectCat();
+                other.gameObject.GetComponent<CatCollector>().CollectCat(gameObject);
                 GetComponent<CatFollow>().enabled = true;
                 GetComponent<CatExtraMovement>().enabled = false;
             }
