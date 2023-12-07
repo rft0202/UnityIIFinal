@@ -32,6 +32,11 @@ public class CatFollow : MonoBehaviour
             StartF();
             CatReset();
         }
+        if (player == null)
+        {
+            StartF();
+            CatReset();
+        }
         agent.SetDestination(player.position);
         if (plat != null)
         {
