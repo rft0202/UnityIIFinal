@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public int enemiesInLevel;
     int enemiesKilled;
     public GrowCounter[] endDoors;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void playerDie()
     {
+        gameManager.catsFollowing = 0;
+        gameManager.cats = new GameObject[30];
         StartCoroutine(nextLvl(SceneManager.GetActiveScene().name));
     }
 }

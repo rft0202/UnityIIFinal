@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int catsFollowing;
     string currScene="";
     public bool sceneChange=false;
-    GameObject[] cats = new GameObject[30]; 
+    public GameObject[] cats = new GameObject[30]; 
 
     private void Awake()
     {
