@@ -139,12 +139,12 @@
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastPivotPosition",
-                "value": "{\"m_Value\":{\"x\":-7.368161201477051,\"y\":-0.00009999999747378752,\"z\":-6.841804504394531}}"
+                "value": "{\"m_Value\":{\"x\":-33.39374542236328,\"y\":-0.00009999999747378752,\"z\":-30.054466247558595}}"
             },
             {
                 "type": "UnityEngine.Vector3, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "ShapeBuilder.LastSize",
-                "value": "{\"m_Value\":{\"x\":14.736322402954102,\"y\":0.0,\"z\":13.683609008789063}}"
+                "value": "{\"m_Value\":{\"x\":66.78749084472656,\"y\":0.0,\"z\":60.10893249511719}}"
             },
             {
                 "type": "UnityEngine.Quaternion, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
