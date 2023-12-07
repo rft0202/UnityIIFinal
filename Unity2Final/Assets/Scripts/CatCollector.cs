@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class CatCollector : MonoBehaviour
 {
+    GameManager gameManager;
     public GameObject[] Doors;
     public GameObject[] Platforms;
     public bool normalCat = true;
+
+    public void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,5 +41,6 @@ public class CatCollector : MonoBehaviour
             GrowCounter gc = d.GetComponent<GrowCounter>();
             gc.plantsToGrow--;
         }
+        gameManager.catsFollowing++; //is this where cats are being collected?
     }
 }

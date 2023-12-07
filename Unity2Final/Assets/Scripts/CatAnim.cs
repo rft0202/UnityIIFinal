@@ -21,6 +21,11 @@ public class CatAnim : MonoBehaviour
         {
             anim.SetBool("sleeping", true);
         }
+
+        if(isSitting)
+        {
+            anim.SetBool("sitting", true);
+        }
     }
 
     // Update is called once per frame
