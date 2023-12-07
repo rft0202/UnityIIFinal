@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public int catsFollowing;
+    public GameObject[] cats;
 
     private void Awake()
     {
