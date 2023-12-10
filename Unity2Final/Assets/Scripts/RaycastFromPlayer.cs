@@ -7,7 +7,7 @@ using Unity.AI.Navigation;
 public class RaycastFromPlayer : MonoBehaviour
 {
     public float dist = 5;
-    bool canPickUp = true, holdingObj = false, hasSurface=false;
+    bool canPickUp = true, holdingObj = false;
     public float pickupCooldown = 1;
 
     Collider heldObj;
@@ -29,7 +29,7 @@ public class RaycastFromPlayer : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward*dist, Color.green);
 
-        try{prevHit.GetComponent<Renderer>().materials[1].SetFloat("_Scale", 0.5f);}
+        try{prevHit.GetComponent<PickupObj>().glowRender.materials[1].SetFloat("_Scale", 0.01f);}
         catch(System.Exception e) { if (e.Message == "") Debug.Log(e); }
         clickIcon.SetActive(showClickIcon());
         Cursor.lockState = CursorLockMode.Locked;

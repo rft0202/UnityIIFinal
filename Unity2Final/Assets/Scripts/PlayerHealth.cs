@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     float currHp;
     public int enemiesInLevel;
     int enemiesKilled;
+    public GrowCounter[] endDoors;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,13 +46,10 @@ public class PlayerHealth : MonoBehaviour
         enemiesKilled++;
         if (enemiesKilled >= enemiesInLevel)
         {
-            StartCoroutine(nextLvl(SceneManager.GetActiveScene().name));
+            //StartCoroutine(nextLvl(SceneManager.GetActiveScene().name));
+            endDoors[0].plantsToGrow = 0;
+            endDoors[1].plantsToGrow = 0;
         }
-    }
-
-    bool allEnemiesDefeated()
-    {
-        return (enemiesKilled >= enemiesInLevel);
     }
 
     IEnumerator nextLvl(string _lvl)
@@ -61,6 +60,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void playerDie()
     {
+        gameManager.catsFollowing = 0;
+        gameManager.cats = new GameObject[30];
         StartCoroutine(nextLvl(SceneManager.GetActiveScene().name));
     }
 }

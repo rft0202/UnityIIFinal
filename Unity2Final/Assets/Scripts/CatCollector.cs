@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class CatCollector : MonoBehaviour
 {
+    GameManager gameManager;
     public GameObject[] Doors;
     public GameObject[] Platforms;
     public bool normalCat = true;
+
+    public void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Cat") && !other.gameObject.GetComponent<CatFollow>().enabled && normalCat)
         {
-            foreach (GameObject d in Doors)
-            {
-                GrowCounter gc = d.GetComponent<GrowCounter>();
-                gc.plantsToGrow--;
-            }
+            CollectCat(other.gameObject);
             /*foreach (GameObject p in Platforms)
             {
                 CatPlatform ps = p.GetComponent<CatPlatform>();
@@ -28,12 +30,15 @@ public class CatCollector : MonoBehaviour
         }
     }
 
-    public void CollectCat()
+    public void CollectCat(GameObject cat)
     {
         foreach (GameObject d in Doors)
         {
             GrowCounter gc = d.GetComponent<GrowCounter>();
             gc.plantsToGrow--;
         }
+        Debug.Log(cat);
+        gameManager.AddCat(cat);
+        DontDestroyOnLoad(cat);
     }
 }
