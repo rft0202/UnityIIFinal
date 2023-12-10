@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
         else if(Instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddCat(GameObject cat) //uh dont think this is used (yet)
+    public void AddCat(GameObject cat)
     {
         cats[catsFollowing] = cat;
         catsFollowing++;
@@ -55,5 +55,14 @@ public class GameManager : MonoBehaviour
             _cat.StartF();
             _cat.CatReset();
         }
+    }
+
+    public bool CatCollected(GameObject cat)
+    {
+        for(int i=0; i<catsFollowing; i++)
+        {
+            if (cats[i] == cat) return true;
+        }
+        return false;
     }
 }

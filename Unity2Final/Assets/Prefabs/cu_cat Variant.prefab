@@ -175,6 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131379f1b234ae641b9d4fa3af80a6fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSleeping: 0
+  isSitting: 0
+  isCollectable: 1
 --- !u!195 &7118679741534441805
 NavMeshAgent:
   m_ObjectHideFlags: 0

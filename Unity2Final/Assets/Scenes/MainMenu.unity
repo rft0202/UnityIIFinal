@@ -7058,6 +7058,11 @@ PrefabInstance:
       propertyPath: isSleeping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: isCollectable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7118679741534441805, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Enabled
@@ -7733,6 +7738,11 @@ PrefabInstance:
       propertyPath: isSleeping
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: isCollectable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7118679741534441805, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Enabled
@@ -8051,6 +8061,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isSitting
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: isCollectable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7118679741534441805, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
@@ -9617,6 +9632,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2a44fa24bbdbd644dac9e1a34073d98f, type: 2}
+    - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: isCollectable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7118679741534441805, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Enabled
@@ -11938,6 +11958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: isSitting
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944840563309793749, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
+        type: 3}
+      propertyPath: isCollectable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7118679741534441805, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}

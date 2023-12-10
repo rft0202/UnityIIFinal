@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currHp = maxHp;
         hpBar.transform.parent.gameObject.SetActive(false);
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     public void TakeDamage(float _dmg)
@@ -60,8 +61,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void playerDie()
     {
-        gameManager.catsFollowing = 0;
-        gameManager.cats = new GameObject[30];
-        StartCoroutine(nextLvl(SceneManager.GetActiveScene().name));
+        //gameManager.catsFollowing = 0;
+        //gameManager.cats = new GameObject[30];
+        //StartCoroutine(nextLvl(SceneManager.GetActiveScene().name));
+        gameManager.PlayerDie();
     }
 }

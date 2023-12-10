@@ -8,8 +8,9 @@ public class CatAnim : MonoBehaviour
     NavMeshAgent agent;
     Animator anim;
 
-    public bool isSleeping;
-    public bool isSitting;
+    public bool isSleeping,isSitting;
+
+    public bool isCollectable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,17 @@ public class CatAnim : MonoBehaviour
         {
             anim.SetBool("sleeping", true);
         }
-
-        if(isSitting)
+        else if(isSitting)
         {
             anim.SetBool("sitting", true);
         }
+
+        if(isCollectable)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
+        
     }
 
     // Update is called once per frame
