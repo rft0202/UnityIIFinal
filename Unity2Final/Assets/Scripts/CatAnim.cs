@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CatAnim : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class CatAnim : MonoBehaviour
     public bool isSleeping,isSitting;
 
     public bool isCollectable = true;
+
+    [NonSerialized]
+    public string fromScene;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +35,7 @@ public class CatAnim : MonoBehaviour
         if(isCollectable)
         {
             DontDestroyOnLoad(gameObject);
+            fromScene = SceneManager.GetActiveScene().name;
         }
 
         

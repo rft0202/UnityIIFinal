@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int catsFollowing;
     string currScene="";
     public bool sceneChange=false;
-    public GameObject[] cats = new GameObject[30];
+    public GameObject[] cats = new GameObject[20];
     GameObject[] dupeCheck;
 
     private void Awake()
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         {
             sceneChange = true;
             currScene = SceneManager.GetActiveScene().name;
+            StartCoroutine(CheckDupeCats());
         }
     }
 
@@ -70,19 +71,33 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CheckDupeCats()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.25f);
         //Get list of all Cats
         dupeCheck = GameObject.FindGameObjectsWithTag("Cat");
 
-        //Check all cats againsts each other
+        //Check all cats againsts each other for duplicates
         for(int i =0; i<dupeCheck.Length; i++)
         {
-            for(int j=i+1; j<dupeCheck.Length; j++)
+            //If cat not collected & cat from different scene (does the cat belong here?)
+            if (!dupeCheck[i].GetComponent<CatFollow>().enabled && dupeCheck[i].GetComponent<CatAnim>().fromScene!=SceneManager.GetActiveScene().name)
             {
-                if (i!=j && dupeCheck[i].name == dupeCheck[j].name) //If two cats have the same name (oh no, dupe!)
+                Destroy(dupeCheck[i]);
+            }
+            else //Else check for duplicates
+            {
+                for (int j = i + 1; j < dupeCheck.Length; j++)
                 {
-                    //Prioritize destroying the cat that hasn't been collected (if reversed player loses cat when die)
-                    Destroy((!dupeCheck[i].GetComponent<CatFollow>().enabled) ? (dupeCheck[i]) : (dupeCheck[j]));
+                    if (i != j && dupeCheck[i].name == dupeCheck[j].name) //If two cats have the same name (oh no, dupe!)
+                    {
+                        CatFollow cf = dupeCheck[i].GetComponent<CatFollow>();
+                        //Player loses platform cats, but keeps regular cats
+                        bool checkBool = (cf.platformCat) ? (cf.enabled) : (!cf.enabled);
+
+                        //Prioritize destroying the cat that hasn't been collected (reversed if platform cat)
+                        Destroy((checkBool) ? (dupeCheck[i]) : (dupeCheck[j]));
+
+                        if (checkBool) catsFollowing--;
+                    }
                 }
             }
         }
