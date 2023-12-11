@@ -25085,7 +25085,7 @@ PrefabInstance:
     - target: {fileID: 1127575995688197340, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Name
-      value: cu_cat Variant (1)
+      value: cu_cat Variant (1)-Puz
       objectReference: {fileID: 0}
     - target: {fileID: 1127575995688197340, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
@@ -47687,7 +47687,7 @@ PrefabInstance:
     - target: {fileID: 1127575995688197340, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
       propertyPath: m_Name
-      value: cu_cat Variant
+      value: cu_cat Variant-Puz
       objectReference: {fileID: 0}
     - target: {fileID: 1127575995688197340, guid: 89fe1c12b62c4cc438df98b3959ca0b7,
         type: 3}
