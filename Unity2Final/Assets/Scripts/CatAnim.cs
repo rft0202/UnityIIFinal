@@ -37,13 +37,16 @@ public class CatAnim : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             fromScene = SceneManager.GetActiveScene().name;
         }
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         anim.SetFloat("movement", agent.velocity.magnitude);
+
+        if (SceneManager.GetActiveScene().name == "WinScreen")
+        {
+            anim.SetTrigger("win");
+        }
     }
 }
