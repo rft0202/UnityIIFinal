@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
 
     public void AddCat(GameObject cat)
     {
-        cats[catsFollowing] = cat;
-        catsFollowing++;
+        cats[getNextIndex()] = cat;
+        catsFollowing = getNextIndex();
     }
     public void PlayerDie()
     {
@@ -67,6 +67,15 @@ public class GameManager : MonoBehaviour
             if (cats[i] == cat) return true;
         }
         return false;
+    }
+
+    int getNextIndex()
+    {
+        for(int i=0; i<20; i++)
+        {
+            if (cats[i] == null) return i;
+        }
+        return -1;
     }
 
     IEnumerator CheckDupeCats()
@@ -96,7 +105,7 @@ public class GameManager : MonoBehaviour
                         //Prioritize destroying the cat that hasn't been collected (reversed if platform cat)
                         Destroy((checkBool) ? (dupeCheck[i]) : (dupeCheck[j]));
 
-                        if (checkBool) catsFollowing--;
+                        //if (checkBool) catsFollowing--;
                     }
                 }
             }
