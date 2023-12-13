@@ -20,6 +20,9 @@ public class FPMovement : MonoBehaviour
     CharacterController controller;
     GameManager gm;
 
+    AudioSource sfx;
+    public AudioClip catCrash;
+
     //ItemCollector collector;
 
     // Start is called before the first frame update
@@ -37,6 +40,8 @@ public class FPMovement : MonoBehaviour
             if (e.Message == "") Debug.Log("");
         }
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+        sfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -154,6 +159,11 @@ public class FPMovement : MonoBehaviour
 
     IEnumerator ChangeScene(string _scene,float _time)
     {
+        if(SceneManager.GetActiveScene().name == "PlatformingRoom")
+        {
+            sfx.PlayOneShot(catCrash);
+            yield return new WaitForSeconds(2.0f);
+        }
         yield return new WaitForSeconds(_time);
         SceneManager.LoadScene(_scene);
     }
