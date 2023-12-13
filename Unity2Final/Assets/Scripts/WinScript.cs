@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class WinScript : MonoBehaviour
 {
-    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.transform.position = new Vector3(0,0,45);
+        transform.position = new Vector3(0,0,45);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
