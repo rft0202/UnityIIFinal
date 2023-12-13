@@ -31352,6 +31352,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3630983130738417110, guid: e91fa0fac941e714e8c4d5709097019f,
         type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630983130738417110, guid: e91fa0fac941e714e8c4d5709097019f,
+        type: 3}
       propertyPath: MinDistance
       value: 2.0711586
       objectReference: {fileID: 0}
