@@ -87,25 +87,28 @@ public class GameManager : MonoBehaviour
         //Check all cats againsts each other for duplicates
         for(int i =0; i<dupeCheck.Length; i++)
         {
-            //If cat not collected & cat from different scene (does the cat belong here?)
-            if (!dupeCheck[i].GetComponent<CatFollow>().enabled && dupeCheck[i].GetComponent<CatAnim>().fromScene!=SceneManager.GetActiveScene().name)
+            if (dupeCheck[i].GetComponent<CatFollow>() != null)
             {
-                Destroy(dupeCheck[i]);
-            }
-            else //Else check for duplicates
-            {
-                for (int j = i + 1; j < dupeCheck.Length; j++)
+                //If cat not collected & cat from different scene (does the cat belong here?)
+                if (!dupeCheck[i].GetComponent<CatFollow>().enabled && dupeCheck[i].GetComponent<CatAnim>().fromScene != SceneManager.GetActiveScene().name)
                 {
-                    if (i != j && dupeCheck[i].name == dupeCheck[j].name) //If two cats have the same name (oh no, dupe!)
+                    Destroy(dupeCheck[i]);
+                }
+                else //Else check for duplicates
+                {
+                    for (int j = i + 1; j < dupeCheck.Length; j++)
                     {
-                        CatFollow cf = dupeCheck[i].GetComponent<CatFollow>();
-                        //Player loses platform cats, but keeps regular cats
-                        bool checkBool = (cf.platformCat) ? (cf.enabled) : (!cf.enabled);
+                        if (i != j && dupeCheck[i].name == dupeCheck[j].name) //If two cats have the same name (oh no, dupe!)
+                        {
+                            CatFollow cf = dupeCheck[i].GetComponent<CatFollow>();
+                            //Player loses platform cats, but keeps regular cats
+                            bool checkBool = (cf.platformCat) ? (cf.enabled) : (!cf.enabled);
 
-                        //Prioritize destroying the cat that hasn't been collected (reversed if platform cat)
-                        Destroy((checkBool) ? (dupeCheck[i]) : (dupeCheck[j]));
+                            //Prioritize destroying the cat that hasn't been collected (reversed if platform cat)
+                            Destroy((checkBool) ? (dupeCheck[i]) : (dupeCheck[j]));
 
-                        //if (checkBool) catsFollowing--;
+                            //if (checkBool) catsFollowing--;
+                        }
                     }
                 }
             }
