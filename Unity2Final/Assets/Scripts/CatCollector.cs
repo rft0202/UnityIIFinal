@@ -44,6 +44,7 @@ public class CatCollector : MonoBehaviour
         gameManager.AddCat(cat);
         cat.GetComponent<Collider>().enabled = false;
         sfx.PlayOneShot(catMeows[Random.Range(0, catMeows.Length)]);
-        
+        Instantiate(catLoveParticle, cat.transform);
+        CatsInScene.catsCollected++;
     }
 }
