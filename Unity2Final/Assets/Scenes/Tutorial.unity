@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.101937234, g: 0.17486341, b: 0.24369071, a: 1}
+  m_IndirectSpecularColor: {r: 0.1019368, g: 0.17486282, b: 0.24368955, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7967,11 +7967,6 @@ PrefabInstance:
       propertyPath: normalCat
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2426334770822465014, guid: bfabc9275868be9488f2dc7e67a68851,
-        type: 3}
-      propertyPath: CatsInScene
-      value: 
-      objectReference: {fileID: 470610082}
     - target: {fileID: 2426334770822465014, guid: bfabc9275868be9488f2dc7e67a68851,
         type: 3}
       propertyPath: Doors.Array.size
