@@ -45073,7 +45073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {fileID: 55601431}
-  maxLength: 5
+  maxLength: 10
 --- !u!114 &1610570811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45305,7 +45305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {fileID: 55601432}
-  maxLength: 5
+  maxLength: 10
 --- !u!114 &1643536528
 MonoBehaviour:
   m_ObjectHideFlags: 0
