@@ -343,8 +343,9 @@ MonoBehaviour:
   - Puzzle
   - AdversaryRoom
   - PlatformingRoom
+  - WinScreen
   startOnScenes:
-  - MainMenu
+  - WinScreen
   maxVol: 0.5
   fadeRate: 0.1
   loopStart: 10
