@@ -7,9 +7,12 @@ public class GrowScript : MonoBehaviour
     public GrowCounter growCounter1;
     public GrowCounter growCounter2;
 
+    public AudioClip growSound;
+    AudioSource sfx;
+
     private void Start()
     {
-
+        sfx = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,5 +29,6 @@ public class GrowScript : MonoBehaviour
         growCounter1.plantsToGrow--;
         growCounter2.plantsToGrow--;
         GetComponent<Collider>().enabled = false;
+        sfx.PlayOneShot(growSound);
     }
 }
