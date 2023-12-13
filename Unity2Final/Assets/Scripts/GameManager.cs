@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currScene = SceneManager.GetActiveScene().name;
+        CatsInScene = GameObject.Find("Cat Count").GetComponent<CatsInScene>();
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
         sceneChange = false;
         if (currScene != SceneManager.GetActiveScene().name)
         {
+            CatsInScene = GameObject.Find("Cat Count").GetComponent<CatsInScene>();
             sceneChange = true;
             currScene = SceneManager.GetActiveScene().name;
             StartCoroutine(CheckDupeCats());
