@@ -9,6 +9,8 @@ public class CatCollector : MonoBehaviour
     public AudioClip[] catMeows;
     AudioSource sfx;
 
+    public CatsInScene CatsInScene;
+
     public void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -41,6 +43,7 @@ public class CatCollector : MonoBehaviour
         gameManager.AddCat(cat);
         cat.GetComponent<Collider>().enabled = false;
         sfx.PlayOneShot(catMeows[Random.Range(0, catMeows.Length)]);
-        
+
+        CatsInScene.catsCollected++;
     }
 }

@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] cats = new GameObject[20];
     GameObject[] dupeCheck;
 
+    public CatsInScene CatsInScene;
+    public int catsCollectedGM;
+
     private void Awake()
     {
         if(Instance == null)
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
     }
     public void PlayerDie()
     {
+        catsCollectedGM = CatsInScene.catsCollected; //save number of cats collected
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         for(int i=0; i<catsFollowing; i++)
         {
