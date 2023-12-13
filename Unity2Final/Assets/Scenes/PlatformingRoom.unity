@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48559,6 +48559,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1733007035}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1733007037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 188051468579858217, guid: 34b5ac0ffaf890746a1130364503d4cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1733007035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8806958a68b7e645b04fdbeda5ed4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1734215648
 Mesh:
   m_ObjectHideFlags: 0
@@ -73200,6 +73212,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2426334770822465014, guid: bfabc9275868be9488f2dc7e67a68851,
+        type: 3}
+      propertyPath: CatsInScene
+      value: 
+      objectReference: {fileID: 1733007037}
     - target: {fileID: 2426334770822465014, guid: bfabc9275868be9488f2dc7e67a68851,
         type: 3}
       propertyPath: Platforms.Array.size

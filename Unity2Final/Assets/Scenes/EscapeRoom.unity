@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.042762198, g: 0.062204123, b: 0.09920722, a: 1}
+  m_IndirectSpecularColor: {r: 0.042762335, g: 0.0622044, b: 0.099207595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2915,6 +2915,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 187073984}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &187073986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 188051468579858217, guid: 34b5ac0ffaf890746a1130364503d4cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 187073984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8806958a68b7e645b04fdbeda5ed4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,6 +4506,11 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[14].m_ActionName
       value: Player/Throw[/Mouse/rightButton]
       objectReference: {fileID: 0}
+    - target: {fileID: 8869719825795940981, guid: 5ff405ea8c1d05440839e46f8d2b5e6f,
+        type: 3}
+      propertyPath: CatsInScene
+      value: 
+      objectReference: {fileID: 187073986}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
