@@ -54,7 +54,7 @@ public class CatPlatform : MonoBehaviour
         {
             other.transform.SetParent(transform);
             playerOn = true;
-        }else if (other.gameObject.CompareTag("Cat") && other.gameObject.GetComponent<CatFollow>().platformCat)
+        }else if (other.gameObject.CompareTag("Cat"))
         {
             //other.transform.SetParent(transform);
             other.gameObject.GetComponent<CatFollow>().onPlatform(gameObject);
@@ -68,7 +68,7 @@ public class CatPlatform : MonoBehaviour
         {
             other.transform.SetParent(null);
             playerOn = false;
-        }else if (other.gameObject.CompareTag("Cat") && other.gameObject.GetComponent<CatFollow>().platformCat)
+        }else if (other.gameObject.CompareTag("Cat"))
         {
             //other.transform.SetParent(null);
             other.gameObject.GetComponent<CatFollow>().offPlatform();

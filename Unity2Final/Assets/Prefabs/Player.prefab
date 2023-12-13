@@ -153,6 +153,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b9f493005d816eb428bd6b94e66d01a5, type: 3}
   - {fileID: 8300000, guid: e200eb8476a78b244adb90820b2b2987, type: 3}
   - {fileID: 8300000, guid: 49d164c63b52de94a9b3af61ae5779ca, type: 3}
+  catLoveParticle: {fileID: 3948385085159462593, guid: 7b33903a5899a194b8b68880d8d8b2a3,
+    type: 3}
 --- !u!114 &4576998212507672411
 MonoBehaviour:
   m_ObjectHideFlags: 0
