@@ -1,15 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class CatAnim : MonoBehaviour
 {
     NavMeshAgent agent;
     Animator anim;
 
-    public bool isSleeping;
-    public bool isSitting;
+    public bool isSleeping,isSitting;
+
+    public bool isCollectable = true;
+
+    [NonSerialized]
+    public string fromScene;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +27,15 @@ public class CatAnim : MonoBehaviour
         {
             anim.SetBool("sleeping", true);
         }
-
-        if(isSitting)
+        else if(isSitting)
         {
             anim.SetBool("sitting", true);
+        }
+
+        if(isCollectable)
+        {
+            DontDestroyOnLoad(gameObject);
+            fromScene = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -32,5 +43,10 @@ public class CatAnim : MonoBehaviour
     void Update()
     {
         anim.SetFloat("movement", agent.velocity.magnitude);
+
+        if (SceneManager.GetActiveScene().name == "WinScreen")
+        {
+            anim.SetTrigger("win");
+        }
     }
 }

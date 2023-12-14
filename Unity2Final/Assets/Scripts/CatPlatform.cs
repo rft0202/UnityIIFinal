@@ -56,7 +56,7 @@ public class CatPlatform : MonoBehaviour
             playerOn = true;
         }else if (other.gameObject.CompareTag("Cat"))
         {
-            other.transform.SetParent(transform);
+            //other.transform.SetParent(transform);
             other.gameObject.GetComponent<CatFollow>().onPlatform(gameObject);
             numCats++;
         }
@@ -70,7 +70,7 @@ public class CatPlatform : MonoBehaviour
             playerOn = false;
         }else if (other.gameObject.CompareTag("Cat"))
         {
-            other.transform.SetParent(null);
+            //other.transform.SetParent(null);
             other.gameObject.GetComponent<CatFollow>().offPlatform();
             numCats--;
         }

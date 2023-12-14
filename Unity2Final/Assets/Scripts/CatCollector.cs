@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CatCollector : MonoBehaviour
@@ -9,10 +6,16 @@ public class CatCollector : MonoBehaviour
     public GameObject[] Doors;
     public GameObject[] Platforms;
     public bool normalCat = true;
+    public AudioClip[] catMeows;
+    AudioSource sfx;
+    public GameObject catLoveParticle;
+
+    public CatsInScene CatsInScene;
 
     public void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        sfx = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,8 +40,11 @@ public class CatCollector : MonoBehaviour
             GrowCounter gc = d.GetComponent<GrowCounter>();
             gc.plantsToGrow--;
         }
-        Debug.Log(cat);
+        //Debug.Log(cat);
         gameManager.AddCat(cat);
-        DontDestroyOnLoad(cat);
+        cat.GetComponent<Collider>().enabled = false;
+        sfx.PlayOneShot(catMeows[Random.Range(0, catMeows.Length)]);
+        Instantiate(catLoveParticle, cat.transform);
+        CatsInScene.catsCollected++;
     }
 }
